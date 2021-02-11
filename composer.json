@@ -4,6 +4,6 @@
     },
     "require": {
         "illuminate/support": "^5.7",
-        "symfony/var-dumper": "^4.2"
+        "symfony/var-dumper": "^5.2"
     }
 }
