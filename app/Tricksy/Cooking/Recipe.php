@@ -52,6 +52,7 @@ class Recipe
     {
     
         $newIng = collect();
+
         foreach($this->ingredientList as $ingredient)
         {
             $newIng->push($ingredient["ingredient"]->dietary());
@@ -65,10 +66,11 @@ class Recipe
     {
         // return $this->ingredientList[0]["ingredient"]->vegan();
 
-        foreach($this->ingredientList as $ingredient)
-        {
+        //look at contains for this method
+        return !$this->ingredientList->contains(function($ingredient) {
              return !$ingredient["ingredient"]->vegan();
-        }
+        });
+   
     }
     
 }
