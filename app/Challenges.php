@@ -15,13 +15,13 @@ class Challenges
 
         // $this->howdy(); // 01
         // $this->wombat(); // 02
-        // $this->stringyRedux(); // 03
-        $this->shopping(); // 04
+        //$this->stringyRedux(); // 03
+        //$this->shopping(); // 04
 
         /* kick off tricksy challenges */
 
-        // $tricksy = new Tricksy();
-        // $tricksy->start();
+        $tricksy = new Tricksy();
+        $tricksy->start();
     }
 
     public function howdy()
@@ -60,15 +60,17 @@ class Challenges
         echo "\nQuestion 03\n";
 
         $string1 = new Redux\Stringy("Oop");
-        dump($string1->lower()->repeat(2)->get()); // "oopoop"
+        $string1->lower();
+        dump($string1->repeat(2));
+        dump($string1->get()); // "oopoop"
 
-        $string2 = new Redux\Stringy("Spoon");
-        dump($string2->repeat(2)->upper()->append("!")->get()); // "SPOONSPOON!"
+        // $string2 = new Redux\Stringy("Spoon");
+        // dump($string2->repeat(2)->upper()->append("!")->get()); // "SPOONSPOON!"
 
-        $string3 = new Redux\Stringy("Na");
+        // $string3 = new Redux\Stringy("Na");
 
-        // "NaNa NaNa NaNa NaNa NaNa NaNa NaNa NaNa Batman!"
-        dump($string3->repeat(2)->append(" ")->repeat(8)->append("Batman!")->get());
+        // // "NaNa NaNa NaNa NaNa NaNa NaNa NaNa NaNa Batman!"
+        // dump($string3->repeat(2)->append(" ")->repeat(8)->append("Batman!")->get());
     }
 
     public function shopping()

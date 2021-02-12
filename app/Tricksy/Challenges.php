@@ -11,7 +11,7 @@ class Challenges
         /* load challenges */
         /* uncomment one at a time */
 
-        // $this->recipe(); // Tricksy 01
+        $this->recipe(); // Tricksy 01
         // $this->superString(); // Tricksy 02
     }
 
@@ -37,7 +37,7 @@ class Challenges
 
         // we can add a method
         $cake->addMethod("Put them in a bowl, mix them together, cook for a bit. Job's a good'un");
-
+        
         // we can see the recipe
         // using echo so it looks nicer
         echo $cake->display() . "\n";
@@ -56,6 +56,7 @@ class Challenges
          */
 
         // we can list dietary information
+        dump($cake->output());
         dump($cake->dietary()); // "gluten, dairy, animal produce"
 
         // is the recipe vegan? (i.e. contains animal produce)
