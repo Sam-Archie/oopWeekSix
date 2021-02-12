@@ -33,10 +33,11 @@ class Recipe
         return $this;
     }
 
-    public function output()
-    {
-       
-    }
+    // public function output()
+    // {
+    //     // $flattened = $this->ingredientList->flatten();
+    //     // return $flattened;
+    // }
 
     public function display()
     {
@@ -49,13 +50,25 @@ class Recipe
 
     public function dietary()
     {
-        
+    
+        $newIng = collect();
+        foreach($this->ingredientList as $ingredient)
+        {
+            $newIng->push($ingredient["ingredient"]->dietary());
+        }
+        return $newIng->flatten()->unique()->implode(", ");
+  
         // return $this->ingredientList[0]["ingredient"]->dietry();
     }
 
     public function vegan()
     {
-        return $this->ingredientList[0]["ingredient"]->vegan();
+        // return $this->ingredientList[0]["ingredient"]->vegan();
+
+        foreach($this->ingredientList as $ingredient)
+        {
+             return !$ingredient["ingredient"]->vegan();
+        }
     }
     
 }

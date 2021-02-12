@@ -56,7 +56,7 @@ class Challenges
          */
 
         // we can list dietary information
-        dump($cake->output());
+        // dump($cake->output());
         dump($cake->dietary()); // "gluten, dairy, animal produce"
 
         // is the recipe vegan? (i.e. contains animal produce)
