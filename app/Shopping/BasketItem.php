@@ -5,9 +5,9 @@ namespace App\Shopping;
 
 class BasketItem
 {
-    private $type;
-    private $price;
-    public function __construct($type, $price)
+    private string $type;
+    private float $price;
+    public function __construct(string $type, float $price)
     {
         $this->type = $type;
         $this->price = $price;

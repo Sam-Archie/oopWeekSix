@@ -3,44 +3,32 @@
 
 namespace App\Shopping;
 
+use Illuminate\Support\Collection;
+
 class Basket
 {
-    private $total = 0;
-    private $items = [];
-    
+    private float $total = 0;
+    private Collection $items;
 
-
-    public function __construct()
+    public function __construct() 
     {
         $this->items = collect();
     }
     
-    public function add($item)
+    public function add($item) : Basket
     {
         $this->items->push($item);
         return $this;
     }
-    // public function output()
-    // {
 
-    //     // dump($this->items);
-    // }
-
-
-    public function total()
+    public function total() : string
     {
-        //Make array a collection, map a new array that takes the price out of current collection. Total that number and return it. 
+
         return  "£" . number_format($this->items->map(fn($item) => $item->price())->sum(), 2,);
     }
 
-    public function items()
+    public function items() : array
     {
         return $this->items->map(fn($item) => $item->type())->all();
     }
-        
-
-
-        // $this->items->map(fn($item) => $item->type);
-
-
 }

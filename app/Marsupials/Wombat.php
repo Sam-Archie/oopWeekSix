@@ -4,31 +4,31 @@ namespace App\Marsupials;
 
 class Wombat
 {
-    private $name;
-    private $hugs;
+    private string $name;
+    private int $hugs = 0;
     
-    public function __construct($name)
+    public function __construct(string $name)
     {
         $this->name = $name;
     }
 
-    public function getName()
+    public function getName() : string
     {
         return $this->name;
     }
 
-    public function sayHelloTo($wombat)
+    public function sayHelloTo(Wombat $wombat) : string 
     {
         return "Hello {$wombat->name}";
     }
 
-    public function giveHug()
+    public function giveHug() : Wombat
     {
-        return $this->hugs += 1;
-        return $this;
+         $this->hugs += 1;
+         return $this;
     }
 
-    public function howManyHugs()
+    public function howManyHugs() : int
     {
         return $this->hugs;
     }
